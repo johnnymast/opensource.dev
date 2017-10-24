@@ -3,7 +3,7 @@
 @section('content')
     <div class="column is-6 is-offset-3">
         <h1 class="title">
-            Opensource NOW@
+            Opensource NOW
         </h1>
         <h2 class="subtitle">
             $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
