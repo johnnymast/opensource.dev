@@ -3,7 +3,7 @@
 @section('content')
     <div class="column is-6 is-offset-3">
         <h1 class="title">
-            Coming Soon
+            Opensource NOW
         </h1>
         <h2 class="subtitle">
             $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
@@ -16,7 +16,7 @@
                 </p>
                 <p class="control">
                     <a class="button is-info">
-                        Notify Me
+                        Find me a job
                     </a>
                 </p>
                 @captcha()
