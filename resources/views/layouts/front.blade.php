@@ -37,7 +37,7 @@
                             Home
                         </a>
                         <span class="navbar-item">
-                <a class="button is-white is-outlined is-small" href="https://github.com/dansup/bulma-templates/blob/master/templates/landing.html">
+                <a class="button is-white is-outlined is-small" href="https://github.com/johnnymast/opensource.dev/tree/master">
                   <span class="icon">
                     <i class="fa fa-github"></i>
                   </span>
