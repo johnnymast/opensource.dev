@@ -6,7 +6,7 @@
             Opensource NOW
         </h1>
         <h2 class="subtitle">
-            $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
+            $this is the best way to find opensource projects that you like in your natural language. You go girl!
         </h2>
         <div class="box">
 
