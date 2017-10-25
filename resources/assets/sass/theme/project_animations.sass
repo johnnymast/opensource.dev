@@ -1,0 +1,40 @@
+$animation-duration: 30s
+$animation-delay: -53.33333s
+
+.project_column
+  -webkit-animation-name: project-trajectory-1400
+  animation-name: project-trajectory-1400
+  animation-delay: $animation-delay
+
+
+.project_column
+  -webkit-transform-origin: center
+  transform-origin: center
+  -webkit-animation: project-trajectory-1400 $animation-duration infinite
+  animation: project-trajectory-1400 $animation-duration infinite
+  -webkit-animation-timing-function: linear
+  animation-timing-function: linear
+  will-change: transform
+
+
+@keyframes project-trajectory-1400
+  0%
+    opacity: 0
+    -webkit-transform: rotate(.001deg) translate3d(1595px, 10px, 0)
+    transform: rotate(.001deg) translate3d(1595px, 10px, 0)
+
+  5%, 95%
+    opacity: 0
+
+
+  6%, 94%
+    opacity: 1
+
+  50%
+    -webkit-transform: rotate(.001deg) translate3d(0, 310px, 0)
+    transform: rotate(.001deg) translate3d(0, 310px, 0)
+
+  100%
+    opacity: 0
+    -webkit-transform: rotate(.001deg) translate3d(-1595px, 10px, 0)
+    transform: rotate(.001deg) translate3d(-1595px, 10px, 0)

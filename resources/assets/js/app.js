@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-require('./bulma.js');
+//require('./bulma.js');
 
 window.Vue = require('vue');
 
@@ -17,7 +17,12 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('projectcard', require('./components/ProjectCard.vue'));
+Vue.component('projectlist', require('./components/ProjectList.vue'));
 
 const app = new Vue({
     el: '#app'
 });
+
+
+Vue.config.devtools = true

@@ -1,28 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);html,body {
-  font-family: 'Open Sans', serif;
-}
-
-.hero.is-info {
-  background: -webkit-gradient(
-  linear,
-  left top, left bottom,
-  from(rgba(0, 0, 0, 0.5)),
-  to(rgba(0, 0, 0, 0.5))
-  ), url('https://unsplash.it/1200/900?random') no-repeat center center fixed;
-  background: linear-gradient(
-  rgba(0, 0, 0, 0.5),
-  rgba(0, 0, 0, 0.5)
-  ), url('https://unsplash.it/1200/900?random') no-repeat center center fixed;
-  background-size: cover;
-}
-.hero .nav, .hero.is-success .nav {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.hero .subtitle {
-  padding: 3rem 0;
-  line-height: 1.5;
-}/*! bulma.io v0.6.0 | MIT License | github.com/jgthms/bulma */
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*! bulma.io v0.6.0 | MIT License | github.com/jgthms/bulma */
 
 /* @import "sass/utilities/_all" */
 
@@ -10812,5 +10788,98 @@ label.panel-block:hover {
 .footer {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem;
+}
+
+.project_column {
+  -webkit-animation-name: project-trajectory-1400;
+  animation-name: project-trajectory-1400;
+  -webkit-animation-delay: -53.33333s;
+          animation-delay: -53.33333s;
+}
+
+.project_column {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: project-trajectory-1400 30s infinite;
+  animation: project-trajectory-1400 30s infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  will-change: transform;
+}
+
+@-webkit-keyframes project-trajectory-1400 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0.001deg) translate3d(1595px, 10px, 0);
+    transform: rotate(0.001deg) translate3d(1595px, 10px, 0);
+  }
+
+  5%, 95% {
+    opacity: 0;
+  }
+
+  6%, 94% {
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform: rotate(0.001deg) translate3d(0, 310px, 0);
+    transform: rotate(0.001deg) translate3d(0, 310px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0.001deg) translate3d(-1595px, 10px, 0);
+    transform: rotate(0.001deg) translate3d(-1595px, 10px, 0);
+  }
+}
+
+@keyframes project-trajectory-1400 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0.001deg) translate3d(1595px, 10px, 0);
+    transform: rotate(0.001deg) translate3d(1595px, 10px, 0);
+  }
+
+  5%, 95% {
+    opacity: 0;
+  }
+
+  6%, 94% {
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform: rotate(0.001deg) translate3d(0, 310px, 0);
+    transform: rotate(0.001deg) translate3d(0, 310px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0.001deg) translate3d(-1595px, 10px, 0);
+    transform: rotate(0.001deg) translate3d(-1595px, 10px, 0);
+  }
+}
+
+html,
+body {
+  font-family: 'Open Sans', serif;
+}
+
+.hero.is-info {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("https://unsplash.it/1200/900?random") no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://unsplash.it/1200/900?random") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.hero .nav,
+.hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.hero .subtitle {
+  padding: 3rem 0;
+  line-height: 1.5;
 }
 
