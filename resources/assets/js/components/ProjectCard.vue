@@ -8,17 +8,13 @@
                     </figure>
                 </div>
                 <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
+                    <p class="title is-4">{{title}}</p>
+                    <p class="subtitle is-6">@{{user}}</p>
                 </div>
             </div>
 
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                {{ content }}
             </div>
         </div>
         <br><br>
@@ -27,7 +23,8 @@
 
 <script>
     export default {
-        name: "projectcard"
+        name: "projectcard",
+        props: ['title', 'user', 'content']
     }
 </script>
 

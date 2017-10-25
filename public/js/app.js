@@ -40538,7 +40538,7 @@ exports = module.exports = __webpack_require__(44)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -40826,13 +40826,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "projectcard"
+    name: "projectcard",
+    props: ['title', 'user', 'content']
 });
 
 /***/ }),
@@ -40843,54 +40840,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "card" }, [
+    _c("div", { staticClass: "card-content" }, [
+      _c("div", { staticClass: "media" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "media-content" }, [
+          _c("p", { staticClass: "title is-4" }, [_vm._v(_vm._s(_vm.title))]),
+          _vm._v(" "),
+          _c("p", { staticClass: "subtitle is-6" }, [
+            _vm._v("@" + _vm._s(_vm.user))
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _vm._v("\n            " + _vm._s(_vm.content) + "\n        ")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _c("br")
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-content" }, [
-        _c("div", { staticClass: "media" }, [
-          _c("div", { staticClass: "media-left" }, [
-            _c("figure", { staticClass: "image is-48x48" }, [
-              _c("img", {
-                attrs: {
-                  src: "https://bulma.io/images/placeholders/96x96.png",
-                  alt: "Placeholder image"
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "media-content" }, [
-            _c("p", { staticClass: "title is-4" }, [_vm._v("John Smith")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "subtitle is-6" }, [_vm._v("@johnsmith")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "content" }, [
-          _vm._v(
-            "\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n            Phasellus nec iaculis mauris. "
-          ),
-          _c("a", [_vm._v("@bulmaio")]),
-          _vm._v(".\n            "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("#css")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("#responsive")]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("time", { attrs: { datetime: "2016-1-1" } }, [
-            _vm._v("11:09 PM - 1 Jan 2016")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _c("br")
+    return _c("div", { staticClass: "media-left" }, [
+      _c("figure", { staticClass: "image is-48x48" }, [
+        _c("img", {
+          attrs: {
+            src: "https://bulma.io/images/placeholders/96x96.png",
+            alt: "Placeholder image"
+          }
+        })
+      ])
     ])
   }
 ]
@@ -40973,7 +40959,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: "projectlist",
     data: function data() {
         return {
-            projectcards: ['one', 'two', 'tree']
+            projectcards: [{
+                title: 'title1',
+                user: 'user1',
+                content: 'This is the placeholder for content 1.\n' + '           Phasellus nec iaculis mauris. <a data-v-17dd50a0=\"\">@bulmaio</a>.\n' + '            <a data-v-17dd50a0=\"\" href=\"#\">#css</a> <a data-v-17dd50a0=\"\" href=\"#\">#responsive</a>'
+            }, {
+                title: 'title2',
+                user: 'user2',
+                content: "This is the placeholder for content 2.\n" + "            Phasellus nec iaculis mauris. <a data-v-17dd50a0=\"\">@bulmaio</a>.\n" + "            <a data-v-17dd50a0=\"\" href=\"#\">#css</a> <a data-v-17dd50a0=\"\" href=\"#\">#responsive</a><"
+            }, {
+                title: 'title3',
+                user: 'user3',
+                content: "This is the placeholder for content 3.\n" + "            Phasellus nec iaculis mauris. <a data-v-17dd50a0=\"\">@bulmaio</a>.\n" + "            <a data-v-17dd50a0=\"\" href=\"#\">#css</a> <a data-v-17dd50a0=\"\" href=\"#\">#responsive</a><"
+            }]
         };
     }
 });
@@ -40992,7 +40990,13 @@ var render = function() {
       "div",
       { staticClass: "column project_column is-8" },
       _vm._l(_vm.projectcards, function(project) {
-        return _c("projectcard")
+        return _c("projectcard", {
+          attrs: {
+            title: project.title,
+            user: project.title,
+            content: project.content
+          }
+        })
       })
     )
   ])
