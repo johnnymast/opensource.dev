@@ -6,7 +6,7 @@
             Opensource NOW
         </h1>
         <h2 class="subtitle">
-            $this is the best way to find opensource projects that you like in your natural language. You go girl!
+            $this is the best way to find opensource projects that you like in your natural habitat. You go girl!
         </h2>
         <div class="box">
 
