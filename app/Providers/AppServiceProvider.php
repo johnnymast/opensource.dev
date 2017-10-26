@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use TCG\Voyager\Models\Page;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+
+        Route::bind('page_slug', function ($hash = '') {
+            return Page::where('slug', $hash)->first();
+        });
     }
 
     /**
