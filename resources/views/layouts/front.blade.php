@@ -43,7 +43,7 @@
                   <span class="icon">
                     <i class="fa fa-github"></i>
                   </span>
-                  <span>View Source</span>
+                  <span>Github</span>
                 </a>
               </span>
                     </div>
