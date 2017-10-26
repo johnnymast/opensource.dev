@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
 
 
         Route::bind('page_slug', function ($hash = '') {
-            return Page::where('slug', $hash)->first();
+            return Page::where(['slug' => $hash, 'status' => 'ACTIVE'])->first();
         });
     }
 
