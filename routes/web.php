@@ -20,7 +20,7 @@ Route::get('/', 'FrontController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'beheer'], function () {
     Voyager::routes();
 });
 
