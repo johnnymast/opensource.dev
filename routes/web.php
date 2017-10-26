@@ -13,7 +13,7 @@
 
 
 Route::get('/', 'FrontController@index')->name('home');
-
+Route::get('/test', 'FrontController@test');
 
 //Auth::routes();
 

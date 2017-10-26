@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="column is-6 is-offset-3">
+    <div class="column is-6 is-offset-3" id="app">
         <h1 class="title">
             Opensource NOW
         </h1>
@@ -19,8 +19,9 @@
                         Find me a job
                     </a>
                 </p>
-                @captcha()
+
             </div>
         </div>
     </div>
+    @captcha()
 @endsection
