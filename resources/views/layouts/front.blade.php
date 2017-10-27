@@ -4,8 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="{{ setting('site.meta_keywords') }}"/>
-    <meta name="description" content="{{ setting('site.meta_description') }}"/>
+    @if (isset($page->meta_keywords))
+        <meta name="keywords" content="{{ $page->meta_keywords }}"/>
+    @else
+        <meta name="keywords" content="{{ setting('site.meta_keywords') }}"/>
+    @endif
+    @if (isset($page->meta_description))
+        <meta name="description" content="{{ $page->meta_description }}"/>
+    @else
+        <meta name="description" content="{{ setting('site.meta_description') }}"/>
+    @endif
     <meta name="robots" content="{{ setting('site.robots') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
