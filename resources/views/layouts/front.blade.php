@@ -9,8 +9,8 @@
     <meta name="robots" content="{{ setting('site.robots') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ setting('site.title') }}</title>
-    <link rel="canonical" href="{{ config('app.url') }}" />
+    <title>{{ setting('site.title') }}@if (isset($page) == true) - {{$page->title}}@endif</title>
+    <link rel="canonical" href="{{ env('APP_URL') }}" />
 
     <link type="text/plain" rel="author" href="{{ url('/humans.txt') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
