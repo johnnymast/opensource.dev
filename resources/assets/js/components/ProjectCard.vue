@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card project-card">
         <div class="card-content">
             <div class="media">
                 <div class="media-left">
@@ -13,11 +13,10 @@
                 </div>
             </div>
 
-            <div class="content">
+            <div class="content" v-html="content">
                 {{ content }}
             </div>
         </div>
-        <br><br>
     </div>
 </template>
 
@@ -29,5 +28,7 @@
 </script>
 
 <style scoped>
-
+.project-card {
+    margin-bottom: 40px;
+}
 </style>

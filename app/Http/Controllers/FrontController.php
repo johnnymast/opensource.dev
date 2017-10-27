@@ -18,33 +18,60 @@ class FrontController extends Controller
 
     public function test()
     {
-        return [
+        $items = [
             [
                 'title' => 'title1',
                 'user' => 'user1',
-                'content' => 'content1',
+                'content' => 'This is the placeholder for content 1. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
             ],
             [
                 'title' => 'title2',
                 'user' => 'user2',
-                'content' => 'content2',
+                'content' => 'This is the placeholder for content 2. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
             ],
             [
                 'title' => 'title3',
                 'user' => 'user3',
-                'content' => 'content3',
+                'content' => 'This is the placeholder for content 3. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
             ],
             [
                 'title' => 'title4',
                 'user' => 'user4',
-                'content' => 'content4',
+                'content' => 'This is the placeholder for content 4. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
             ],
             [
                 'title' => 'title5',
                 'user' => 'user5',
-                'content' => 'content5',
+                'content' => 'This is the placeholder for content 5. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
+            ],
+            [
+                'title' => 'title6',
+                'user' => 'user6',
+                'content' => 'This is the placeholder for content 6. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
+            ],
+            [
+                'title' => 'title7',
+                'user' => 'user7',
+                'content' => 'This is the placeholder for content 7. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
+            ],
+            [
+                'title' => 'title8',
+                'user' => 'user8',
+                'content' => 'This is the placeholder for content 8. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
+            ],
+            [
+                'title' => 'title9',
+                'user' => 'user9',
+                'content' => 'This is the placeholder for content 9. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
+            ],
+            [
+                'title' => 'title10',
+                'user' => 'user10',
+                'content' => 'This is the placeholder for content 10. Phasellus nec iaculis mauris. <a data-v-17dd50a0="">@bulmaio</a><a data-v-17dd50a0="" href="#">#css</a> <a data-v-17dd50a0="" href="#">#responsive</a>',
             ],
         ];
+        $items = collect($items);
+        return $items->chunk(2);
     }
 
     /**

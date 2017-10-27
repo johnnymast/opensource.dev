@@ -40445,7 +40445,7 @@ exports = module.exports = __webpack_require__(44)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.project-card[data-v-17dd50a0] {\n    margin-bottom: 40px;\n}\n", ""]);
 
 // exports
 
@@ -40814,7 +40814,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "projectcard",
@@ -40829,7 +40828,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
+  return _c("div", { staticClass: "card project-card" }, [
     _c("div", { staticClass: "card-content" }, [
       _c("div", { staticClass: "media" }, [
         _vm._m(0),
@@ -40843,13 +40842,15 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "content" }, [
-        _vm._v("\n            " + _vm._s(_vm.content) + "\n        ")
-      ])
-    ]),
-    _vm._v(" "),
-    _c("br"),
-    _c("br")
+      _c(
+        "div",
+        {
+          staticClass: "content",
+          domProps: { innerHTML: _vm._s(_vm.content) }
+        },
+        [_vm._v("\n            " + _vm._s(_vm.content) + "\n        ")]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -40941,6 +40942,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "projectlist",
@@ -40953,14 +40956,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        console.log('Mounted');
-
         axios.get('/test').then(function (response) {
             // JSON responses are automatically parsed.
-            console.log(response.data[0].title);
             _this.projectcards = response.data;
         }).catch(function (e) {
-            _this.errors.push(e);
+            // this.errors.push(e)
         });
     }
 });
@@ -40976,15 +40976,21 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "column project_column is-8" },
-      _vm._l(_vm.projectcards, function(project) {
-        return _c("projectcard", {
-          attrs: {
-            title: project.title,
-            user: project.user,
-            content: project.content
-          }
-        })
+      { staticClass: "columns" },
+      _vm._l(_vm.projectcards, function(set) {
+        return _c(
+          "div",
+          { staticClass: "column project_column is-4" },
+          _vm._l(set, function(project) {
+            return _c("projectcard", {
+              attrs: {
+                title: project.title,
+                user: project.user,
+                content: project.content
+              }
+            })
+          })
+        )
       })
     )
   ])

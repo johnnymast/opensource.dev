@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="{{ setting('site.meta_keywords') }}"/>
+    <meta name="description" content="{{ setting('site.meta_description') }}"/>
+    <meta name="robots" content="{{ setting('site.robots') }}/>
+
     <title>{{ setting('site.title') }}</title>
+
     <link type="text/plain" rel="author" href="{{ url('/humans.txt') }}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
+
+    <link rel="canonical" href="{{ config('app.url') }}" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
