@@ -12,8 +12,11 @@
 */
 
 
-Route::get('/', 'FrontController@index')->name('home');
-Route::get('/test', 'FrontController@test');
+Route::resource('/', 'FrontController', [
+    'names' => [
+        'index' => 'home'
+    ]
+]);
 
 /**
  * Sitemaps

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProgrammingLanguage;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -13,7 +14,9 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $languages = ProgrammingLanguage::whereActive(true)->get();
+
+        return view('home.index', compact('languages'));
     }
 
     public function test()
@@ -71,6 +74,7 @@ class FrontController extends Controller
             ],
         ];
         $items = collect($items);
+
         return $items->chunk(2);
     }
 
