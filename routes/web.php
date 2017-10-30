@@ -15,9 +15,15 @@
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/test', 'FrontController@test');
 
-//Auth::routes();
+/**
+ * Sitemaps
+ */
+Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap.index');
+Route::get('/sitemap/pages', 'SitemapController@pages')->name('sitemap.pages');
+Route::redirect('/sitemap', 'sitemap.xml');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+
+//Auth::routes();
 
 
 Route::group(['prefix' => 'beheer'], function () {
