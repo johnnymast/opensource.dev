@@ -24,7 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-    @if (config('site.google_analytics_tracking_id'))
+    @if (setting('site.google_analytics_tracking_id'))
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109078007-1"></script>
     <script>
@@ -32,7 +32,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', '{{config('site.google_analytics_tracking_id')}}');
+        gtag('config', '{{setting('site.google_analytics_tracking_id')}}');
     </script>
     @endif
 </head>
