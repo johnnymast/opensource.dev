@@ -22,6 +22,19 @@
 
     <link type="text/plain" rel="author" href="{{ url('/humans.txt') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    @if (config('site.google_analytics_tracking_id'))
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109078007-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{config('site.google_analytics_tracking_id')}}');
+    </script>
+    @endif
 </head>
 <body>
 <section class="hero is-info is-fullheight">
