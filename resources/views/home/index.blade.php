@@ -34,20 +34,6 @@
             <!-- @ captcha() -->
             {!! Form::close() !!}
         </div>
-        <style scoped>
-            .project-card {
-                margin-bottom: 40px;
-                border-radius: 5px;
-            }
-
-            .project-card .card {
-                border-radius: 5px;
-            }
-
-            .project-card .content {
-                margin-bottom: 0.5rem;
-            }
-        </style>
         <div id="app">
 
             @if (isset($projects))
