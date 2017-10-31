@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use GrahamCampbell\Markdown\Facades\Markdown;
+use GrahamCampbell\GitHub\Facades\GitHub;
 use App\ProgrammingLanguage;
 use Illuminate\Http\Request;
+
 
 class FrontController extends Controller
 {
@@ -17,7 +20,7 @@ class FrontController extends Controller
         $active_languages = ProgrammingLanguage::whereActive(true)->get();
         $languages = [];
         foreach ($active_languages as $language) {
-            $languages[$language->id] = $language->title;
+            $languages[$language->github_keyword] = $language->title;
         }
 
         $args = [
@@ -28,189 +31,49 @@ class FrontController extends Controller
                 //         'g-recaptcha-response' => 'required|captcha',
                 'language' => 'required',
             ]);
-            $args['projects'] = $this->test();
+
+            $query = 'label:"good first issue"  language:'.$data['language'];
+           // dd($query);
+            $github_issues = GitHub::connection()->search()->issues($query);
+            $issues = [];
+
+            foreach ($github_issues['items'] as $issue) {
+
+                $parts = explode('/', $issue['repository_url']);
+                $repo = end($parts);
+
+                $newissue = [
+                    'title' => $issue['title'],
+                    'state' => $issue['state'],
+                    'url'   => $issue['html_url'],
+                    'repository_url' => $issue['repository_url'],
+                    'repository_name' => $repo,
+                    'user' => [
+                        'name' => $issue['user']['login'],
+                        'profile' => $issue['user']['html_url'],
+                        'avatar' => $issue['user']['avatar_url'],
+                    ],
+                    'tags' => [],
+                    'content' => Markdown::convertToHtml(str_limit($issue['body'], 100)),
+                ];
+                
+                if (count($issue['labels']) > 0) {
+                    foreach ($issue['labels'] as $label) {
+                        $newissue['tags'][] = [
+                          'name' => $label['name'],
+                          'color' => $label['color'],
+                        ];
+                    }
+                }
+
+                $issues[] = $newissue;
+            }
+
+            $projects = collect($issues)->chunk(2);
+
+            $args['projects'] = $projects;
         }
 
         return view('home.index', $args);
-    }
-
-    public function test()
-    {
-        $items = [
-            [
-                'title' => 'title1',
-                'user' => 'user1',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title2',
-                'user' => 'user2',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title3',
-                'user' => 'user3',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title4',
-                'user' => 'user4',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title5',
-                'user' => 'user5',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title6',
-                'user' => 'user6',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title7',
-                'user' => 'user7',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title8',
-                'user' => 'user8',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title9',
-                'user' => 'user9',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-            [
-                'title' => 'title10',
-                'user' => 'user10',
-                'content' => 'This is some sample <b>html</b>',
-                'tags' => [
-                    [
-                        'title' => 'help wanted',
-                        'type' => 'helpwanted',
-                    ],
-                    [
-                        'title' => 'good first issue',
-                        'type' => 'goodfirstissue',
-                    ],
-
-                ],
-            ],
-        ];
-        $items = collect($items);
-
-        return $items->chunk(2);
     }
 }

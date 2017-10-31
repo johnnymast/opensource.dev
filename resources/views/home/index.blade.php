@@ -66,17 +66,18 @@
                                                     </figure>
                                                 </div>
                                                 <div class="media-content">
-                                                    <p class="titles is-4">{{$project['title']}}</p>
-                                                    <p class="subtitles is-6">{{'@'}}{{ $project['user'] }}</p>
+                                                    <p class="titles is-4"><a href="{{$project['repository_url']}}">{{$project['repository_name']}}</a> | <a href="{{$project['url']}}">{{$project['title']}}</a></p>
+                                                    <p class="subtitles is-6"><a target="_blank" href="{{url($project['user']['profile'])}}">{{'@'}}{{ $project['user']['name'] }}</a></p>
                                                 </div>
                                             </div>
 
                                             <div class="content has-text-left">
+
                                                 {!! $project['content'] !!}
                                             </div>
                                             <div class="content has-text-left">
                                                 @foreach($project['tags'] as $tag)
-                                                    <span class="tag {{$tag['type']}}">Primary</span>
+                                                    <span class="tag is-primary" style="background-color: {{ $tag['color'] }}">{{$tag['name']}}</span>
                                                 @endforeach
                                             </div>
 

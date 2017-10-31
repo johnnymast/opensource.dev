@@ -11007,8 +11007,8 @@ label.panel-block:hover {
 .project_column {
   -webkit-animation-name: project-trajectory-1400;
   animation-name: project-trajectory-1400;
-  -webkit-animation-delay: -53.33333s;
-          animation-delay: -53.33333s;
+  -webkit-animation-delay: -23.33333s;
+          animation-delay: -23.33333s;
 }
 
 .project_column {
@@ -11107,5 +11107,18 @@ body {
 
 .goodfirstissue {
   background-color: #7057ff !important;
+}
+
+.project-card {
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.project-card .card {
+  border-radius: 5px;
+}
+
+.project-card .content {
+  margin-bottom: 0.5rem;
 }
 
