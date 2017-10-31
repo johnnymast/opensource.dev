@@ -15,6 +15,7 @@
         "laravel-frontend-presets/bulma": "^1.5",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.4.0",
         "php-http/guzzle6-adapter": "^1.1",
         "renatomarinho/laravel-page-speed": "^1.8",
         "tcg/voyager": "^1.0"

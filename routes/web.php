@@ -12,11 +12,8 @@
 */
 
 
-Route::resource('/', 'FrontController', [
-    'names' => [
-        'index' => 'home'
-    ]
-]);
+Route::match(['GET', 'POST'],'/', 'FrontController@index')->name('home');
+
 
 /**
  * Sitemaps

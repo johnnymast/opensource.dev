@@ -1869,55 +1869,81 @@ a.box:active {
   color: whitesmoke;
 }
 
-.button.is-primary {
+.button.is-primary,
+.button.helpwanted,
+.button.goodfirstissue {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff;
 }
 
 .button.is-primary:hover,
-.button.is-primary.is-hovered {
+.button.helpwanted:hover,
+.button.goodfirstissue:hover,
+.button.is-primary.is-hovered,
+.button.is-hovered.helpwanted,
+.button.is-hovered.goodfirstissue {
   background-color: #00c4a7;
   border-color: transparent;
   color: #fff;
 }
 
 .button.is-primary:focus,
-.button.is-primary.is-focused {
+.button.helpwanted:focus,
+.button.goodfirstissue:focus,
+.button.is-primary.is-focused,
+.button.is-focused.helpwanted,
+.button.is-focused.goodfirstissue {
   border-color: transparent;
   color: #fff;
 }
 
 .button.is-primary:focus:not(:active),
-.button.is-primary.is-focused:not(:active) {
+.button.helpwanted:focus:not(:active),
+.button.goodfirstissue:focus:not(:active),
+.button.is-primary.is-focused:not(:active),
+.button.is-focused.helpwanted:not(:active),
+.button.is-focused.goodfirstissue:not(:active) {
   -webkit-box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
           box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
 }
 
 .button.is-primary:active,
-.button.is-primary.is-active {
+.button.helpwanted:active,
+.button.goodfirstissue:active,
+.button.is-primary.is-active,
+.button.is-active.helpwanted,
+.button.is-active.goodfirstissue {
   background-color: #00b89c;
   border-color: transparent;
   color: #fff;
 }
 
-.button.is-primary[disabled] {
+.button.is-primary[disabled],
+.button[disabled].helpwanted,
+.button[disabled].goodfirstissue {
   background-color: #00d1b2;
   border-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.button.is-primary.is-inverted {
+.button.is-primary.is-inverted,
+.button.is-inverted.helpwanted,
+.button.is-inverted.goodfirstissue {
   background-color: #fff;
   color: #00d1b2;
 }
 
-.button.is-primary.is-inverted:hover {
+.button.is-primary.is-inverted:hover,
+.button.is-inverted.helpwanted:hover,
+.button.is-inverted.goodfirstissue:hover {
   background-color: #f2f2f2;
 }
 
-.button.is-primary.is-inverted[disabled] {
+.button.is-primary.is-inverted[disabled],
+.button.is-inverted[disabled].helpwanted,
+.button.is-inverted[disabled].goodfirstissue {
   background-color: #fff;
   border-color: transparent;
   -webkit-box-shadow: none;
@@ -1925,28 +1951,40 @@ a.box:active {
   color: #00d1b2;
 }
 
-.button.is-primary.is-loading:after {
+.button.is-primary.is-loading:after,
+.button.is-loading.helpwanted:after,
+.button.is-loading.goodfirstissue:after {
   border-color: transparent transparent #fff #fff !important;
 }
 
-.button.is-primary.is-outlined {
+.button.is-primary.is-outlined,
+.button.is-outlined.helpwanted,
+.button.is-outlined.goodfirstissue {
   background-color: transparent;
   border-color: #00d1b2;
   color: #00d1b2;
 }
 
 .button.is-primary.is-outlined:hover,
-.button.is-primary.is-outlined:focus {
+.button.is-outlined.helpwanted:hover,
+.button.is-outlined.goodfirstissue:hover,
+.button.is-primary.is-outlined:focus,
+.button.is-outlined.helpwanted:focus,
+.button.is-outlined.goodfirstissue:focus {
   background-color: #00d1b2;
   border-color: #00d1b2;
   color: #fff;
 }
 
-.button.is-primary.is-outlined.is-loading:after {
+.button.is-primary.is-outlined.is-loading:after,
+.button.is-outlined.is-loading.helpwanted:after,
+.button.is-outlined.is-loading.goodfirstissue:after {
   border-color: transparent transparent #00d1b2 #00d1b2 !important;
 }
 
-.button.is-primary.is-outlined[disabled] {
+.button.is-primary.is-outlined[disabled],
+.button.is-outlined[disabled].helpwanted,
+.button.is-outlined[disabled].goodfirstissue {
   background-color: transparent;
   border-color: #00d1b2;
   -webkit-box-shadow: none;
@@ -1954,19 +1992,27 @@ a.box:active {
   color: #00d1b2;
 }
 
-.button.is-primary.is-inverted.is-outlined {
+.button.is-primary.is-inverted.is-outlined,
+.button.is-inverted.is-outlined.helpwanted,
+.button.is-inverted.is-outlined.goodfirstissue {
   background-color: transparent;
   border-color: #fff;
   color: #fff;
 }
 
 .button.is-primary.is-inverted.is-outlined:hover,
-.button.is-primary.is-inverted.is-outlined:focus {
+.button.is-inverted.is-outlined.helpwanted:hover,
+.button.is-inverted.is-outlined.goodfirstissue:hover,
+.button.is-primary.is-inverted.is-outlined:focus,
+.button.is-inverted.is-outlined.helpwanted:focus,
+.button.is-inverted.is-outlined.goodfirstissue:focus {
   background-color: #fff;
   color: #00d1b2;
 }
 
-.button.is-primary.is-inverted.is-outlined[disabled] {
+.button.is-primary.is-inverted.is-outlined[disabled],
+.button.is-inverted.is-outlined[disabled].helpwanted,
+.button.is-inverted.is-outlined[disabled].goodfirstissue {
   background-color: transparent;
   border-color: #fff;
   -webkit-box-shadow: none;
@@ -2993,18 +3039,38 @@ a.box:active {
 }
 
 .input.is-primary,
-.textarea.is-primary {
+.input.helpwanted,
+.input.goodfirstissue,
+.textarea.is-primary,
+.textarea.helpwanted,
+.textarea.goodfirstissue {
   border-color: #00d1b2;
 }
 
 .input.is-primary:focus,
+.input.helpwanted:focus,
+.input.goodfirstissue:focus,
 .input.is-primary.is-focused,
+.input.is-focused.helpwanted,
+.input.is-focused.goodfirstissue,
 .input.is-primary:active,
+.input.helpwanted:active,
+.input.goodfirstissue:active,
 .input.is-primary.is-active,
+.input.is-active.helpwanted,
+.input.is-active.goodfirstissue,
 .textarea.is-primary:focus,
+.textarea.helpwanted:focus,
+.textarea.goodfirstissue:focus,
 .textarea.is-primary.is-focused,
+.textarea.is-focused.helpwanted,
+.textarea.is-focused.goodfirstissue,
 .textarea.is-primary:active,
-.textarea.is-primary.is-active {
+.textarea.helpwanted:active,
+.textarea.goodfirstissue:active,
+.textarea.is-primary.is-active,
+.textarea.is-active.helpwanted,
+.textarea.is-active.goodfirstissue {
   -webkit-box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
           box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
 }
@@ -3382,14 +3448,24 @@ a.box:active {
           box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25);
 }
 
-.select.is-primary select {
+.select.is-primary select,
+.select.helpwanted select,
+.select.goodfirstissue select {
   border-color: #00d1b2;
 }
 
 .select.is-primary select:focus,
+.select.helpwanted select:focus,
+.select.goodfirstissue select:focus,
 .select.is-primary select.is-focused,
+.select.helpwanted select.is-focused,
+.select.goodfirstissue select.is-focused,
 .select.is-primary select:active,
-.select.is-primary select.is-active {
+.select.helpwanted select:active,
+.select.goodfirstissue select:active,
+.select.is-primary select.is-active,
+.select.helpwanted select.is-active,
+.select.goodfirstissue select.is-active {
   -webkit-box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
           box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
 }
@@ -3641,21 +3717,31 @@ a.box:active {
   color: whitesmoke;
 }
 
-.file.is-primary .file-cta {
+.file.is-primary .file-cta,
+.file.helpwanted .file-cta,
+.file.goodfirstissue .file-cta {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff;
 }
 
 .file.is-primary:hover .file-cta,
-.file.is-primary.is-hovered .file-cta {
+.file.helpwanted:hover .file-cta,
+.file.goodfirstissue:hover .file-cta,
+.file.is-primary.is-hovered .file-cta,
+.file.is-hovered.helpwanted .file-cta,
+.file.is-hovered.goodfirstissue .file-cta {
   background-color: #00c4a7;
   border-color: transparent;
   color: #fff;
 }
 
 .file.is-primary:focus .file-cta,
-.file.is-primary.is-focused .file-cta {
+.file.helpwanted:focus .file-cta,
+.file.goodfirstissue:focus .file-cta,
+.file.is-primary.is-focused .file-cta,
+.file.is-focused.helpwanted .file-cta,
+.file.is-focused.goodfirstissue .file-cta {
   border-color: transparent;
   -webkit-box-shadow: 0 0 0.5em rgba(0, 209, 178, 0.25);
           box-shadow: 0 0 0.5em rgba(0, 209, 178, 0.25);
@@ -3663,7 +3749,11 @@ a.box:active {
 }
 
 .file.is-primary:active .file-cta,
-.file.is-primary.is-active .file-cta {
+.file.helpwanted:active .file-cta,
+.file.goodfirstissue:active .file-cta,
+.file.is-primary.is-active .file-cta,
+.file.is-active.helpwanted .file-cta,
+.file.is-active.goodfirstissue .file-cta {
   background-color: #00b89c;
   border-color: transparent;
   color: #fff;
@@ -4096,7 +4186,9 @@ a.box:active {
   color: #363636;
 }
 
-.help.is-primary {
+.help.is-primary,
+.help.helpwanted,
+.help.goodfirstissue {
   color: #00d1b2;
 }
 
@@ -4674,7 +4766,9 @@ a.box:active {
   color: whitesmoke;
 }
 
-.notification.is-primary {
+.notification.is-primary,
+.notification.helpwanted,
+.notification.goodfirstissue {
   background-color: #00d1b2;
   color: #fff;
 }
@@ -4764,11 +4858,15 @@ a.box:active {
   background-color: #363636;
 }
 
-.progress.is-primary::-webkit-progress-value {
+.progress.is-primary::-webkit-progress-value,
+.progress.helpwanted::-webkit-progress-value,
+.progress.goodfirstissue::-webkit-progress-value {
   background-color: #00d1b2;
 }
 
-.progress.is-primary::-moz-progress-bar {
+.progress.is-primary::-moz-progress-bar,
+.progress.helpwanted::-moz-progress-bar,
+.progress.goodfirstissue::-moz-progress-bar {
   background-color: #00d1b2;
 }
 
@@ -4867,7 +4965,11 @@ a.box:active {
 }
 
 .table td.is-primary,
-.table th.is-primary {
+.table td.helpwanted,
+.table td.goodfirstissue,
+.table th.is-primary,
+.table th.helpwanted,
+.table th.goodfirstissue {
   background-color: #00d1b2;
   border-color: #00d1b2;
   color: #fff;
@@ -5073,7 +5175,9 @@ a.box:active {
   color: whitesmoke;
 }
 
-.tag:not(body).is-primary {
+.tag:not(body).is-primary,
+.tag.helpwanted:not(body),
+.tag.goodfirstissue:not(body) {
   background-color: #00d1b2;
   color: #fff;
 }
@@ -6119,16 +6223,22 @@ a.dropdown-item.is-active {
   color: #2a2a2a;
 }
 
-.message.is-primary {
+.message.is-primary,
+.message.helpwanted,
+.message.goodfirstissue {
   background-color: #f5fffd;
 }
 
-.message.is-primary .message-header {
+.message.is-primary .message-header,
+.message.helpwanted .message-header,
+.message.goodfirstissue .message-header {
   background-color: #00d1b2;
   color: #fff;
 }
 
-.message.is-primary .message-body {
+.message.is-primary .message-body,
+.message.helpwanted .message-body,
+.message.goodfirstissue .message-body {
   border-color: #00d1b2;
   color: #021310;
 }
@@ -6710,60 +6820,110 @@ a.dropdown-item.is-active {
   }
 }
 
-.navbar.is-primary {
+.navbar.is-primary,
+.navbar.helpwanted,
+.navbar.goodfirstissue {
   background-color: #00d1b2;
   color: #fff;
 }
 
 .navbar.is-primary .navbar-brand > .navbar-item,
-.navbar.is-primary .navbar-brand .navbar-link {
+.navbar.helpwanted .navbar-brand > .navbar-item,
+.navbar.goodfirstissue .navbar-brand > .navbar-item,
+.navbar.is-primary .navbar-brand .navbar-link,
+.navbar.helpwanted .navbar-brand .navbar-link,
+.navbar.goodfirstissue .navbar-brand .navbar-link {
   color: #fff;
 }
 
 .navbar.is-primary .navbar-brand > a.navbar-item:hover,
+.navbar.helpwanted .navbar-brand > a.navbar-item:hover,
+.navbar.goodfirstissue .navbar-brand > a.navbar-item:hover,
 .navbar.is-primary .navbar-brand > a.navbar-item.is-active,
+.navbar.helpwanted .navbar-brand > a.navbar-item.is-active,
+.navbar.goodfirstissue .navbar-brand > a.navbar-item.is-active,
 .navbar.is-primary .navbar-brand .navbar-link:hover,
-.navbar.is-primary .navbar-brand .navbar-link.is-active {
+.navbar.helpwanted .navbar-brand .navbar-link:hover,
+.navbar.goodfirstissue .navbar-brand .navbar-link:hover,
+.navbar.is-primary .navbar-brand .navbar-link.is-active,
+.navbar.helpwanted .navbar-brand .navbar-link.is-active,
+.navbar.goodfirstissue .navbar-brand .navbar-link.is-active {
   background-color: #00b89c;
   color: #fff;
 }
 
-.navbar.is-primary .navbar-brand .navbar-link::after {
+.navbar.is-primary .navbar-brand .navbar-link::after,
+.navbar.helpwanted .navbar-brand .navbar-link::after,
+.navbar.goodfirstissue .navbar-brand .navbar-link::after {
   border-color: #fff;
 }
 
 @media screen and (min-width: 1024px) {
   .navbar.is-primary .navbar-start > .navbar-item,
+  .navbar.helpwanted .navbar-start > .navbar-item,
+  .navbar.goodfirstissue .navbar-start > .navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
+  .navbar.helpwanted .navbar-start .navbar-link,
+  .navbar.goodfirstissue .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end > .navbar-item,
-  .navbar.is-primary .navbar-end .navbar-link {
+  .navbar.helpwanted .navbar-end > .navbar-item,
+  .navbar.goodfirstissue .navbar-end > .navbar-item,
+  .navbar.is-primary .navbar-end .navbar-link,
+  .navbar.helpwanted .navbar-end .navbar-link,
+  .navbar.goodfirstissue .navbar-end .navbar-link {
     color: #fff;
   }
 
   .navbar.is-primary .navbar-start > a.navbar-item:hover,
+  .navbar.helpwanted .navbar-start > a.navbar-item:hover,
+  .navbar.goodfirstissue .navbar-start > a.navbar-item:hover,
   .navbar.is-primary .navbar-start > a.navbar-item.is-active,
+  .navbar.helpwanted .navbar-start > a.navbar-item.is-active,
+  .navbar.goodfirstissue .navbar-start > a.navbar-item.is-active,
   .navbar.is-primary .navbar-start .navbar-link:hover,
+  .navbar.helpwanted .navbar-start .navbar-link:hover,
+  .navbar.goodfirstissue .navbar-start .navbar-link:hover,
   .navbar.is-primary .navbar-start .navbar-link.is-active,
+  .navbar.helpwanted .navbar-start .navbar-link.is-active,
+  .navbar.goodfirstissue .navbar-start .navbar-link.is-active,
   .navbar.is-primary .navbar-end > a.navbar-item:hover,
+  .navbar.helpwanted .navbar-end > a.navbar-item:hover,
+  .navbar.goodfirstissue .navbar-end > a.navbar-item:hover,
   .navbar.is-primary .navbar-end > a.navbar-item.is-active,
+  .navbar.helpwanted .navbar-end > a.navbar-item.is-active,
+  .navbar.goodfirstissue .navbar-end > a.navbar-item.is-active,
   .navbar.is-primary .navbar-end .navbar-link:hover,
-  .navbar.is-primary .navbar-end .navbar-link.is-active {
+  .navbar.helpwanted .navbar-end .navbar-link:hover,
+  .navbar.goodfirstissue .navbar-end .navbar-link:hover,
+  .navbar.is-primary .navbar-end .navbar-link.is-active,
+  .navbar.helpwanted .navbar-end .navbar-link.is-active,
+  .navbar.goodfirstissue .navbar-end .navbar-link.is-active {
     background-color: #00b89c;
     color: #fff;
   }
 
   .navbar.is-primary .navbar-start .navbar-link::after,
-  .navbar.is-primary .navbar-end .navbar-link::after {
+  .navbar.helpwanted .navbar-start .navbar-link::after,
+  .navbar.goodfirstissue .navbar-start .navbar-link::after,
+  .navbar.is-primary .navbar-end .navbar-link::after,
+  .navbar.helpwanted .navbar-end .navbar-link::after,
+  .navbar.goodfirstissue .navbar-end .navbar-link::after {
     border-color: #fff;
   }
 
   .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link,
-  .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link {
+  .navbar.helpwanted .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar.goodfirstissue .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar.helpwanted .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar.goodfirstissue .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #00b89c;
     color: #fff;
   }
 
-  .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
+  .navbar.is-primary .navbar-dropdown a.navbar-item.is-active,
+  .navbar.helpwanted .navbar-dropdown a.navbar-item.is-active,
+  .navbar.goodfirstissue .navbar-dropdown a.navbar-item.is-active {
     background-color: #00d1b2;
     color: #fff;
   }
@@ -10143,86 +10303,140 @@ label.panel-block:hover {
   }
 }
 
-.hero.is-primary {
+.hero.is-primary,
+.hero.helpwanted,
+.hero.goodfirstissue {
   background-color: #00d1b2;
   color: #fff;
 }
 
 .hero.is-primary a:not(.button),
-.hero.is-primary strong {
+.hero.helpwanted a:not(.button),
+.hero.goodfirstissue a:not(.button),
+.hero.is-primary strong,
+.hero.helpwanted strong,
+.hero.goodfirstissue strong {
   color: inherit;
 }
 
-.hero.is-primary .title {
+.hero.is-primary .title,
+.hero.helpwanted .title,
+.hero.goodfirstissue .title {
   color: #fff;
 }
 
-.hero.is-primary .subtitle {
+.hero.is-primary .subtitle,
+.hero.helpwanted .subtitle,
+.hero.goodfirstissue .subtitle {
   color: rgba(255, 255, 255, 0.9);
 }
 
 .hero.is-primary .subtitle a:not(.button),
-.hero.is-primary .subtitle strong {
+.hero.helpwanted .subtitle a:not(.button),
+.hero.goodfirstissue .subtitle a:not(.button),
+.hero.is-primary .subtitle strong,
+.hero.helpwanted .subtitle strong,
+.hero.goodfirstissue .subtitle strong {
   color: #fff;
 }
 
 @media screen and (max-width: 1023px) {
-  .hero.is-primary .navbar-menu {
+  .hero.is-primary .navbar-menu,
+  .hero.helpwanted .navbar-menu,
+  .hero.goodfirstissue .navbar-menu {
     background-color: #00d1b2;
   }
 }
 
 .hero.is-primary .navbar-item,
-.hero.is-primary .navbar-link {
+.hero.helpwanted .navbar-item,
+.hero.goodfirstissue .navbar-item,
+.hero.is-primary .navbar-link,
+.hero.helpwanted .navbar-link,
+.hero.goodfirstissue .navbar-link {
   color: rgba(255, 255, 255, 0.7);
 }
 
 .hero.is-primary a.navbar-item:hover,
+.hero.helpwanted a.navbar-item:hover,
+.hero.goodfirstissue a.navbar-item:hover,
 .hero.is-primary a.navbar-item.is-active,
+.hero.helpwanted a.navbar-item.is-active,
+.hero.goodfirstissue a.navbar-item.is-active,
 .hero.is-primary .navbar-link:hover,
-.hero.is-primary .navbar-link.is-active {
+.hero.helpwanted .navbar-link:hover,
+.hero.goodfirstissue .navbar-link:hover,
+.hero.is-primary .navbar-link.is-active,
+.hero.helpwanted .navbar-link.is-active,
+.hero.goodfirstissue .navbar-link.is-active {
   background-color: #00b89c;
   color: #fff;
 }
 
-.hero.is-primary .tabs a {
+.hero.is-primary .tabs a,
+.hero.helpwanted .tabs a,
+.hero.goodfirstissue .tabs a {
   color: #fff;
   opacity: 0.9;
 }
 
-.hero.is-primary .tabs a:hover {
+.hero.is-primary .tabs a:hover,
+.hero.helpwanted .tabs a:hover,
+.hero.goodfirstissue .tabs a:hover {
   opacity: 1;
 }
 
-.hero.is-primary .tabs li.is-active a {
+.hero.is-primary .tabs li.is-active a,
+.hero.helpwanted .tabs li.is-active a,
+.hero.goodfirstissue .tabs li.is-active a {
   opacity: 1;
 }
 
 .hero.is-primary .tabs.is-boxed a,
-.hero.is-primary .tabs.is-toggle a {
+.hero.helpwanted .tabs.is-boxed a,
+.hero.goodfirstissue .tabs.is-boxed a,
+.hero.is-primary .tabs.is-toggle a,
+.hero.helpwanted .tabs.is-toggle a,
+.hero.goodfirstissue .tabs.is-toggle a {
   color: #fff;
 }
 
 .hero.is-primary .tabs.is-boxed a:hover,
-.hero.is-primary .tabs.is-toggle a:hover {
+.hero.helpwanted .tabs.is-boxed a:hover,
+.hero.goodfirstissue .tabs.is-boxed a:hover,
+.hero.is-primary .tabs.is-toggle a:hover,
+.hero.helpwanted .tabs.is-toggle a:hover,
+.hero.goodfirstissue .tabs.is-toggle a:hover {
   background-color: rgba(10, 10, 10, 0.1);
 }
 
 .hero.is-primary .tabs.is-boxed li.is-active a,
+.hero.helpwanted .tabs.is-boxed li.is-active a,
+.hero.goodfirstissue .tabs.is-boxed li.is-active a,
 .hero.is-primary .tabs.is-boxed li.is-active a:hover,
+.hero.helpwanted .tabs.is-boxed li.is-active a:hover,
+.hero.goodfirstissue .tabs.is-boxed li.is-active a:hover,
 .hero.is-primary .tabs.is-toggle li.is-active a,
-.hero.is-primary .tabs.is-toggle li.is-active a:hover {
+.hero.helpwanted .tabs.is-toggle li.is-active a,
+.hero.goodfirstissue .tabs.is-toggle li.is-active a,
+.hero.is-primary .tabs.is-toggle li.is-active a:hover,
+.hero.helpwanted .tabs.is-toggle li.is-active a:hover,
+.hero.goodfirstissue .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
   color: #00d1b2;
 }
 
-.hero.is-primary.is-bold {
+.hero.is-primary.is-bold,
+.hero.is-bold.helpwanted,
+.hero.is-bold.goodfirstissue {
   background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
 }
 
 @media screen and (max-width: 768px) {
-  .hero.is-primary.is-bold .navbar-menu {
+  .hero.is-primary.is-bold .navbar-menu,
+  .hero.is-bold.helpwanted .navbar-menu,
+  .hero.is-bold.goodfirstissue .navbar-menu {
     background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
   }
 }
@@ -10881,5 +11095,17 @@ body {
 .hero .subtitle {
   padding: 3rem 0;
   line-height: 1.5;
+}
+
+.language-field {
+  margin-bottom: 0px !important;
+}
+
+.helpwanted {
+  background-color: #00d1b2;
+}
+
+.goodfirstissue {
+  background-color: #7057ff !important;
 }
 
