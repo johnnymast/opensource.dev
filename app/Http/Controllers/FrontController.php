@@ -72,7 +72,7 @@ class FrontController extends Controller
             }
 
             if (count($issues) == 0) {
-                return redirect()->route('home')->withErrors(['No jobs fount i\'im so sorry']);
+                return redirect()->route('home')->withErrors(['No jobs found i\'im so sorry']);
             }
             $projects = collect($issues)->chunk(2);
 
