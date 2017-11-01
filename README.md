@@ -1,6 +1,7 @@
 # opensource.dev
 
 ```bash
+composer install
 php artisan voyager:install
 php artisan migrate
 
