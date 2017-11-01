@@ -31,7 +31,7 @@ class FrontController extends Controller
         ];
         if ($request->isMethod('post')) {
             $data = $request->validate([
-                //         'g-recaptcha-response' => 'required|captcha',
+                'g-recaptcha-response' => 'required|captcha',
                 'language' => 'required',
             ]);
 

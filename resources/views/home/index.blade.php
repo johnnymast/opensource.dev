@@ -33,7 +33,7 @@
                     {{ Form::submit('Search',['class' => 'button is-primary']) }}
                 </div>
             </div>
-            <!-- @ captcha() -->
+            @captcha()
             {!! Form::close() !!}
         </div>
         <div id="app">
@@ -59,10 +59,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="content has-text-left">
-
-                                                {!! $project['content'] !!}
-                                            </div>
+                                            <div class="content has-text-left">{!! $project['content'] !!}</div>
                                             <div class="content has-text-left">
                                                 @foreach($project['tags'] as $tag)
                                                     <span class="tag is-primary" style="background-color: {{ $tag['color'] }}">{{$tag['name']}}</span>
