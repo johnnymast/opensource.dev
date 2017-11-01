@@ -20,7 +20,7 @@
             <!-- START ARTICLE -->
             <div class="card article">
                 <div class="card-content">
-                    <div class="content article-body">{!! $page->body !!}</div>
+                    <div class="content article-body has-text-left">{!! $page->body !!}</div>
                 </div>
             </div>
             <!-- END ARTICLE -->
