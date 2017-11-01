@@ -23,6 +23,17 @@
     <link type="text/plain" rel="author" href="{{ url('/humans.txt') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    @if (setting('open-graph.locale'))
+        <meta property="og:locale" content="{{setting('open-graph.locale')}}" />
+    @endif
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ setting('site.title') }}@if (isset($page) == true) - {{$page->title}}@endif" />
+    <meta property="og:url" content="{{ Request::url() }}" />
+    <meta property="og:site_name" content="{{setting('site.title')}}" />
+    @if (setting('open-graph.app_id'))<meta property="fb:app_id" content="{{setting('open-graph.app_id')}}" />@endif
+
+    @if (setting('open-graph.image'))<meta property="og:image" content="{{setting('open-graph.image')}}" />@endif
+
 
     @if (setting('site.google_analytics_tracking_id'))<!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109078007-1"></script>
