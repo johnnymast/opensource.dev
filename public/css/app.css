@@ -11122,3 +11122,16 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.is-page .title:not(:last-child),
+.is-page .subtitle:not(:last-child) {
+  margin: 0px;
+}
+
+.is-page .title:not(.is-spaced) + .subtitle {
+  margin-top: 0px;
+}
+
+.is-page .hero .subtitle {
+  padding: 0px;
+}
+
