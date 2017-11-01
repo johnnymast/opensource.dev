@@ -6,7 +6,9 @@
             Opensource NOW
         </h1>
         <h2 class="subtitle">
+            @if ($randomquote)
             {{$randomquote->quote}}
+            @endif
         </h2>
         <div class="box">
             @if ($errors->any())
