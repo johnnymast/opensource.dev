@@ -32,7 +32,7 @@
     <meta property="og:site_name" content="{{setting('site.title')}}" />
     @if (setting('open-graph.app_id'))<meta property="fb:app_id" content="{{setting('open-graph.app_id')}}" />@endif
 
-    @if (setting('open-graph.image'))<meta property="og:image" content="{{asset(setting('open-graph.image'))}}" />@endif
+    @if (setting('open-graph.image'))<meta property="og:image" content="{{asset(Voyager::image(setting('open-graph.image')))}}" />@endif
 
 
     @if (setting('site.google_analytics_tracking_id'))<!-- Global site tag (gtag.js) - Google Analytics -->
