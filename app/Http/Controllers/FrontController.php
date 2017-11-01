@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Quote;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use App\ProgrammingLanguage;
@@ -18,6 +19,7 @@ class FrontController extends Controller
     public function index(Request $request)
     {
         $active_languages = ProgrammingLanguage::whereActive(true)->get();
+
         $languages = [];
         foreach ($active_languages as $language) {
             $languages[$language->github_keyword] = $language->title;
@@ -25,6 +27,7 @@ class FrontController extends Controller
 
         $args = [
             'languages' => $languages,
+            'randomquote' => Quote::inRandomOrder()->whereStatus('PUBLISHED')->first()
         ];
         if ($request->isMethod('post')) {
             $data = $request->validate([
