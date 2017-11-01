@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Quote;
-use GrahamCampbell\Markdown\Facades\Markdown;
-use GrahamCampbell\GitHub\Facades\GitHub;
 use App\ProgrammingLanguage;
+use App\Quote;
+use GrahamCampbell\GitHub\Facades\GitHub;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\Request;
-
 
 class FrontController extends Controller
 {
@@ -27,7 +26,7 @@ class FrontController extends Controller
 
         $args = [
             'languages' => $languages,
-            'randomquote' => Quote::inRandomOrder()->whereStatus('PUBLISHED')->first()
+            'randomquote' => Quote::inRandomOrder()->whereStatus('PUBLISHED')->first(),
         ];
         if ($request->isMethod('post')) {
             $data = $request->validate([
@@ -36,7 +35,7 @@ class FrontController extends Controller
             ]);
 
             $query = 'label:"good first issue"  language:'.$data['language'];
-           // dd($query);
+
             $github_issues = GitHub::connection()->search()->issues($query);
             $issues = [];
 
@@ -48,7 +47,7 @@ class FrontController extends Controller
                 $newissue = [
                     'title' => $issue['title'],
                     'state' => $issue['state'],
-                    'url'   => $issue['html_url'],
+                    'url' => $issue['html_url'],
                     'repository_url' => $issue['repository_url'],
                     'repository_name' => $repo,
                     'user' => [
@@ -59,12 +58,12 @@ class FrontController extends Controller
                     'tags' => [],
                     'content' => Markdown::convertToHtml(str_limit($issue['body'], 100)),
                 ];
-                
+
                 if (count($issue['labels']) > 0) {
                     foreach ($issue['labels'] as $label) {
                         $newissue['tags'][] = [
-                          'name' => $label['name'],
-                          'color' => $label['color'],
+                            'name' => $label['name'],
+                            'color' => $label['color'],
                         ];
                     }
                 }
@@ -72,6 +71,9 @@ class FrontController extends Controller
                 $issues[] = $newissue;
             }
 
+            if (count($issues) == 0) {
+                return redirect()->route('home')->withErrors(['No jobs fount i\'im so sorry']);
+            }
             $projects = collect($issues)->chunk(2);
 
             $args['projects'] = $projects;
