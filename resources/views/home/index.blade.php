@@ -5,7 +5,7 @@
         <h1 class="title">{{ setting('site.title') }}</h1>
         <h2 class="subtitle">
             @if ($randomquote)
-            {{$randomquote->quote}}
+                {{$randomquote->quote}}
             @endif
         </h2>
         <div class="box">
@@ -37,12 +37,23 @@
         <div id="app">
 
             @if (isset($projects))
-                <div class="columns project_container">
-                    @foreach ($projects as $set)
-                        <div class="column project_column is-full">
+
+                @foreach ($projects as $set)
+                    <div class="columns project_container">
+                        <div class="column is-full">
                             @foreach($set as $project)
                                 <div class="card project-card">
                                     <div class="card">
+                                        <header class="card-header">
+                                            <p class="card-header-title">
+                                                <a href="{{$project['repository_url']}}">{{ucfirst($project['repository_name'])}}</a>
+                                            </p>
+                                            <a href="#" class="card-header-icon" aria-label="more options">
+                                              <span class="icon">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                              </span>
+                                            </a>
+                                        </header>
                                         <div class="card-content">
                                             <div class="media">
                                                 <div class="media-left">
@@ -52,15 +63,18 @@
                                                     </figure>
                                                 </div>
                                                 <div class="media-content">
-                                                    <p class="titles is-4"><a href="{{$project['repository_url']}}">{{$project['repository_name']}}</a> | <a href="{{$project['url']}}">{{$project['title']}}</a></p>
-                                                    <p class="subtitles is-6"><a target="_blank" href="{{url($project['user']['profile'])}}">{{'@'}}{{ $project['user']['name'] }}</a></p>
+                                                    <p class="titles is-4"><strong>Title:</strong><a href="{{$project['url']}}">{{$project['title']}}</a></p>
+                                                    <p class="subtitles is-4"><a target="_blank"
+                                                                                 href="{{url($project['user']['profile'])}}">{{'@'}}{{ $project['user']['name'] }}</a>
+                                                    </p>
                                                 </div>
                                             </div>
 
-                                            <div class="content has-text-left">{!! $project['content'] !!}</div>
+                                            {{--<div class="content has-text-left">{!! $project['content'] !!}</div>--}}
                                             <div class="content has-text-left">
                                                 @foreach($project['tags'] as $tag)
-                                                    <span class="tag is-primary" style="background-color: {{ $tag['color'] }}">{{$tag['name']}}</span>
+                                                    <span class="tag is-primary"
+                                                          style="background-color: {{ $tag['color'] }}">{{$tag['name']}}</span>
                                                 @endforeach
                                             </div>
 
@@ -70,9 +84,10 @@
                                 </div>
                             @endforeach
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             @endif
+
         </div>
     </div>
 @endsection
