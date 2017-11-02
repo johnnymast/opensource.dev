@@ -11135,3 +11135,21 @@ body {
   padding: 0px;
 }
 
+.content-wrapper {
+  display: none;
+  overflow: scroll;
+}
+
+.content-wrapper:hover {
+  display: block;
+}
+
+.card-header-icon {
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.card-header-icon:hover + .content-wrapper {
+  display: block;
+}
+

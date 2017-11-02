@@ -56,14 +56,14 @@ class FrontController extends Controller
                         'avatar' => $issue['user']['avatar_url'],
                     ],
                     'tags' => [],
-                    'content' => Markdown::convertToHtml(str_limit($issue['body'], 100)),
+                    'content' => Markdown::convertToHtml($issue['body']),
                 ];
 
                 if (count($issue['labels']) > 0) {
                     foreach ($issue['labels'] as $label) {
                         $newissue['tags'][] = [
                             'name' => $label['name'],
-                            'color' => $label['color'],
+                            'color' => '#'.$label['color'],
                         ];
                     }
                 }
