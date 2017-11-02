@@ -3,6 +3,7 @@
 ```bash
 composer install
 php artisan voyager:install
+php artisan storage:link
 php artisan migrate
 
 php artisan db:seed --class=ProgrammingLanguagesTableSeeder
