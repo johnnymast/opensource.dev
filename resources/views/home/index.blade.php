@@ -2,9 +2,7 @@
 
 @section('content')
     <div class="column is-6 is-offset-3">
-        <h1 class="title">
-            Opensource NOW
-        </h1>
+        <h1 class="title">{{ setting('site.title') }}</h1>
         <h2 class="subtitle">
             @if ($randomquote)
             {{$randomquote->quote}}

@@ -17,17 +17,16 @@ class FrontController extends Controller
      */
     public function index(Request $request)
     {
-        $active_languages = ProgrammingLanguage::whereActive(true)->get();
 
-        $languages = [];
-        foreach ($active_languages as $language) {
-            $languages[$language->github_keyword] = $language->title;
-        }
 
         $args = [
-            'languages' => $languages,
             'randomquote' => Quote::inRandomOrder()->whereStatus('PUBLISHED')->first(),
+            'languages' => ProgrammingLanguage::whereActive(true)->get()->mapWithKeys(function ($language) {
+                return [$language->github_keyword => $language->title];
+            }),
         ];
+
+
         if ($request->isMethod('post')) {
             $data = $request->validate([
                 'g-recaptcha-response' => 'required|captcha',
