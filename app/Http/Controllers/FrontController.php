@@ -29,7 +29,7 @@ class FrontController extends Controller
 
         if ($request->isMethod('post')) {
             $data = $request->validate([
-                'g-recaptcha-response' => 'required|captcha',
+    //            'g-recaptcha-response' => 'required|captcha',
                 'language' => 'required',
             ]);
 
@@ -38,7 +38,6 @@ class FrontController extends Controller
             $github_issues = GitHub::connection()->search()->issues($query);
             $issues = [];
 
-            $max = 40;
             foreach ($github_issues['items'] as $index => $issue) {
 
                 $parts = explode('/', $issue['repository_url']);
@@ -69,7 +68,6 @@ class FrontController extends Controller
                 }
 
                 $issues[] = $newissue;
-                if ($index >= $max) break;
             }
 
             if (count($issues) == 0) {
