@@ -31,7 +31,7 @@
                     {{ Form::submit('Search',['class' => 'button is-primary']) }}
                 </div>
             </div>
-            @ captcha()
+            @captcha()
             {!! Form::close() !!}
         </div>
     </div>
