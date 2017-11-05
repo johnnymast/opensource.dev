@@ -63,6 +63,7 @@ class FrontController extends Controller
                         $newissue['tags'][] = [
                             'name' => $label['name'],
                             'color' => '#'.$label['color'],
+                            'url' => $issue['html_url'],
                         ];
                     }
                 }

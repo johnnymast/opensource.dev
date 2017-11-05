@@ -1,6 +1,6 @@
 <template>
-    <div>
-     <span class="tag is-primary" :style="tagCss"><slot></slot></span>
+    <div class="inline-block">
+     <a :href="link" :aria-label="title"><span class="tag is-primary" :style="tagCss">{{title}}</span></a>
     </div>
 </template>
 
@@ -8,7 +8,7 @@
     let Color = require('color');
 
     export default {
-        props: ['background'],
+        props: ['background','title', 'link'],
         name: "issue-tag",
         computed: {
             tagCss: function() {

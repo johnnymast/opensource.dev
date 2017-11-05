@@ -1,7 +1,6 @@
 @extends('layouts.front')
 
 @section('content')
-
     <div class="column is-6 is-offset-3">
         <h1 class="title">{{ setting('site.title') }}</h1>
         <h2 class="subtitle">
@@ -25,7 +24,7 @@
             <div class="field has-addons language-field">
                 <div class="control is-expanded">
                     <div class="select is-fullwidth">
-                        {{ Form::select('language', $languages, '', ['placeholder' => 'Select a language...'])  }}
+                        {{ Form::select('language', $languages, '', ['placeholder' => 'Select a language...', 'aria-label' => 'Select a language...'])  }}
                     </div>
                 </div>
                 <div class="control">
@@ -37,7 +36,6 @@
         </div>
     </div>
     <div class="column is-6 is-offset-3" id="app">
-
         @if (isset($projects))
             @foreach ($projects as $set)
                 @foreach($set as $project)
@@ -64,7 +62,6 @@
                                     </p>
                                 </div>
                             </div>
-
                             <div class="content has-text-left">
                                 <a href="#" class="card-header-icon" aria-label="more options">
                                     @lang('Show more')
@@ -76,19 +73,14 @@
                             </div>
                             <div class="content has-text-left">
                                 @foreach($project['tags'] as $tag)
-                                    <issue-tag background="{{$tag['color']}}">
+                                    <issue-tag background="{{$tag['color']}}" title="{{$tag['name']}}" link="{{$tag['url']}}">
                                           {{$tag['name']}}</issue-tag>
                                 @endforeach
                             </div>
-
                         </div>
                     </div>
                 @endforeach
             @endforeach
-
         @endif
-
-
     </div>
-
 @endsection

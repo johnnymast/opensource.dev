@@ -42688,7 +42688,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var Color = __webpack_require__(37);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['background'],
+    props: ['background', 'title', 'link'],
     name: "issue-tag",
     computed: {
         tagCss: function tagCss() {
@@ -42711,13 +42711,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "span",
-      { staticClass: "tag is-primary", style: _vm.tagCss },
-      [_vm._t("default")],
-      2
-    )
+  return _c("div", { staticClass: "inline-block" }, [
+    _c("a", { attrs: { href: _vm.link, "aria-label": _vm.title } }, [
+      _c("span", { staticClass: "tag is-primary", style: _vm.tagCss }, [
+        _vm._v(_vm._s(_vm.title))
+      ])
+    ])
   ])
 }
 var staticRenderFns = []

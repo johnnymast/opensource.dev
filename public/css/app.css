@@ -11144,12 +11144,20 @@ body {
   display: block;
 }
 
-.card-header-icon {
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 100%);
-}
-
 .card-header-icon:hover + .content-wrapper {
   display: block;
+}
+
+.card-content .titles,
+.card-content .subtitles {
+  font-weight: bold;
+}
+
+.tag {
+  font-weight: bold;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
