@@ -69,6 +69,9 @@
                         <a href="{{ route('page', 'about') }}" class="navbar-item @if (Route::currentRouteName() == 'page') is-active @endif">
                             @lang('About')
                         </a>
+                        <a href="{{ route('contact') }}" class="navbar-item @if (Route::currentRouteName() == 'contact') is-active @endif">
+                            @lang('Contact')
+                        </a>
                         <span class="navbar-item">
                 <a class="button is-white is-outlined is-small" href="https://github.com/johnnymast/opensource.dev/tree/master">
                   <span class="icon">

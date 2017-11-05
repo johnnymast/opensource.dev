@@ -22,6 +22,11 @@ Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap.index');
 Route::get('/sitemap/pages', 'SitemapController@pages')->name('sitemap.pages');
 Route::redirect('/sitemap', 'sitemap.xml');
 
+/**
+ * Display and handle the contact form
+ */
+Route::get('/contact', 'ContactController@show')->name('contact');
+Route::post('/contact', 'ContactController@store')->name('contact_store');
 
 //Auth::routes();
 

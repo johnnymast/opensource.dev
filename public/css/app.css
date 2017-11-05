@@ -11135,6 +11135,10 @@ body {
   padding: 0px;
 }
 
+.is-contact .subtitle {
+  padding: 0px;
+}
+
 .content-wrapper {
   display: none;
   overflow: scroll;

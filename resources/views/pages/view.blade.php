@@ -1,12 +1,8 @@
 @extends('layouts.front')
 
 @section('content')
-
-
     <div class="column is-8 is-offset-2 is-page">
         <section class="articles">
-
-            <!-- START PROMO BLOCK -->
             <section class="hero is-dark">
                 <div class="hero-body">
                     <div class="container">
@@ -15,16 +11,11 @@
                     </div>
                 </div>
             </section>
-            <!-- END PROMO BLOCK -->
-
-            <!-- START ARTICLE -->
             <div class="card article">
                 <div class="card-content">
                     <div class="content article-body has-text-left">{!! $page->body !!}</div>
                 </div>
             </div>
-            <!-- END ARTICLE -->
-
         </section>
     </div>
 @endsection
