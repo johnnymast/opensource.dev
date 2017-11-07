@@ -45,8 +45,8 @@
         gtag('config', '{{setting('site.google_analytics_tracking_id')}}');
     </script>
     @endif
-    @if (setting('site.hotjar_tracking_code))
-        {{setting('site.hotjar_tracking_code)}}
+    @if (setting('site.hotjar_tracking_code'))
+        {{ setting('site.hotjar_tracking_code') }}
     @endif
 </head>
 <body>
