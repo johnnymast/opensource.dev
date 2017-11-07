@@ -46,7 +46,7 @@
     </script>
     @endif
     @if (setting('site.hotjar_tracking_code'))
-        {{ setting('site.hotjar_tracking_code') }}
+        {!! setting('site.hotjar_tracking_code') !!}
     @endif
 </head>
 <body>
