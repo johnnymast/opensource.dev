@@ -13,7 +13,7 @@ class FrontController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -33,10 +33,15 @@ class FrontController extends Controller
                 'language' => 'required',
             ]);
 
-            $query = 'label:"good first issue"  language:'.$data['language'];
+              return redirect()->route('home', [
+                'language' => $data['language']
+            ]);
 
-            $github_issues = GitHub::connection()->search()->issues($query);
+        } else if ($request->isMethod('get') && $request->has('language')) {
+
             $issues = [];
+            $query = 'label:"good first issue"  language:' .  $request->language;
+            $github_issues = GitHub::connection()->search()->issues($query);
 
             foreach ($github_issues['items'] as $index => $issue) {
 
@@ -62,7 +67,7 @@ class FrontController extends Controller
                     foreach ($issue['labels'] as $label) {
                         $newissue['tags'][] = [
                             'name' => $label['name'],
-                            'color' => '#'.$label['color'],
+                            'color' => '#' . $label['color'],
                             'url' => $issue['html_url'],
                         ];
                     }
@@ -77,6 +82,7 @@ class FrontController extends Controller
             $projects = collect($issues)->chunk(2);
 
             $args['projects'] = $projects;
+
         }
 
         return view('home.index', $args);

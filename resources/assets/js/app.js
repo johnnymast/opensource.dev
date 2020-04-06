@@ -10,6 +10,7 @@ require('./theme/bulma.js');
 
 window.Vue = require('vue');
 
+Vue.component('issue-content', require('./components/issue-content.vue'));
 Vue.component('issue-tag', require('./components/issue-tag.vue'));
 
 
